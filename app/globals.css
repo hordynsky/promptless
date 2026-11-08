@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0e0826;
+  --color-panel: #1a1140;
+  --color-line: #2d2070;
+  --color-deep: #06031a;
+  --color-text: #efe9ff;
+  --color-muted: #a79fd1;
+  --color-cyan: #3ef2ff;
+  --color-magenta: #ff5ce0;
+  --color-yellow: #ffe44d;
+  --color-green: #5bff8a;
+  --color-gold: #ffd23f;
+  --color-silver: #c9d1ea;
+  --color-bronze: #e0a15a;
+  --font-px: var(--font-press-start), monospace;
+  --font-body: var(--font-grotesk), system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-ink text-text font-body;
+  }
+  .font-px {
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border-[3px] border-line shadow-[6px_6px_0_var(--color-deep)];
+  }
+  .pbtn {
+    @apply font-px text-[10px] leading-none px-3.5 py-3 border-[3px] border-cyan text-cyan inline-block whitespace-nowrap shadow-[3px_3px_0_var(--color-deep)] no-underline cursor-pointer;
+  }
+  .pbtn:hover {
+    @apply bg-cyan text-ink;
+  }
+  .pbtn-on {
+    @apply bg-cyan text-ink;
+  }
+  .pbtn-off {
+    @apply border-line text-muted;
+  }
+  .pbtn-magenta {
+    @apply border-magenta text-magenta;
+  }
+  .pbtn-magenta:hover {
+    @apply bg-magenta text-ink;
+  }
+}
